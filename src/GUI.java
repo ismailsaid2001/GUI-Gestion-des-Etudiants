@@ -11,6 +11,7 @@ public class GUI {
     JButton b_remove;
     JButton b_update;
     JButton b_affiche;
+    JButton b_serialize;
     JRadioButton Homme;
     JRadioButton Femme ;
     JComboBox jComboBox_Filiere;
@@ -65,6 +66,7 @@ public class GUI {
         b_add=new JButton("ajouter") ;
         b_remove=new JButton("effacer") ;
         b_affiche=new JButton("afficher") ;
+        b_serialize=new JButton("serializer") ;
         // adding Labels and !text fields in the grid
         //first row
         pnorth.add(Label_Nom);
@@ -85,15 +87,16 @@ public class GUI {
         peast.add(b_update);
         peast.add(b_remove);
         peast.add(b_affiche) ;
+        peast.add(b_serialize) ;
         f.add(peast, BorderLayout.EAST); //adding pnorth panel  in the north of the frame
         //
         f.add(Noms,BorderLayout.CENTER) ;
         //
         MonEcouteur me = new MonEcouteur(this);
         //adding ActionListener for Buttons and Jcomboboxes
+        b_serialize.addActionListener(me);
         b_add.addActionListener(me);
         b_remove.addActionListener(me);
-        b_add.addActionListener(me);
         b_update.addActionListener(me);
         b_affiche.addActionListener(me);
         f.setSize(500,500);
